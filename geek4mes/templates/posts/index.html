@@ -1,0 +1,26 @@
+{% extends 'posts/base.html' %}
+{% block title %}
+    Главная страница
+{% endblock %}
+{% block content %}
+<h1>Главная страница</h1>
+{#{{ my_list }}#}
+<ol>
+    {% for item in my_list %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ol>
+
+{% if 8 in my_list %}
+    <p>В списке есть элемент 4</p>
+{% elif 7 in my_list %}
+    <p>В списке есть элемент 7</p>
+{% else %}
+    <p>Ничего нет</p>
+{% endif %}
+
+<a href="{% url 'contacts-page' %}">Контакты</a>
+<br>
+<a href="{% url 'about-page' %}">О нас</a>
+<br>
+{% endblock %}
